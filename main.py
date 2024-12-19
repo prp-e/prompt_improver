@@ -3,6 +3,9 @@ from config import *
 
 client = OpenAI(api_key = OPENAI_API_KEY, base_url = OPENAI_ENDPOINT)
 
+prompt = open('prompt.md')
+prompt = prompt.read()
+
 def improver(prompt):
 
     completion = client.chat.completions.create(
