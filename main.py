@@ -4,8 +4,16 @@ from config import *
 client = OpenAI(api_key = OPENAI_API_KEY, base_url = OPENAI_ENDPOINT)
 
 def improver(prompt):
-    
-    client.chat.completions.create()
+
+    client.chat.completions.create(
+        model = "openai",
+        messages = [
+            {
+                "role" : "user",
+                "content" : f"improve my prompt: {prompt}"
+            }
+        ]
+    )
 
 if __name__ == "__main__":
     while True:
