@@ -20,5 +20,10 @@ def improver(prompt):
 if __name__ == "__main__":
     while True:
         user_input = input("Enter your desired system prompt (or input \"exit\" to exit.): ")
+
         if user_input == "exit":
             break
+
+        improved_prompt = improver(user_input)
+        print("wait...")
+        print(improved_prompt)
