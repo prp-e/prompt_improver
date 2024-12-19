@@ -5,7 +5,7 @@ client = OpenAI(api_key = OPENAI_API_KEY, base_url = OPENAI_ENDPOINT)
 
 def improver(prompt):
 
-    client.chat.completions.create(
+    completion = client.chat.completions.create(
         model = "openai",
         messages = [
             {
@@ -14,6 +14,8 @@ def improver(prompt):
             }
         ]
     )
+
+    return completion.choices[0].message.content
 
 if __name__ == "__main__":
     while True:
