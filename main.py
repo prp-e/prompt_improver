@@ -3,8 +3,8 @@ from config import *
 
 client = OpenAI(api_key = OPENAI_API_KEY, base_url = OPENAI_ENDPOINT)
 
-prompt = open('prompt.md')
-prompt = prompt.read()
+main_prompt = open('prompt.md')
+main_prompt = main_prompt.read()
 
 def improver(prompt):
 
@@ -13,7 +13,7 @@ def improver(prompt):
         messages = [
             {
                 "role" : "user",
-                "content" : f"improve my prompt: {prompt}"
+                "content" : f"{main_prompt}\n{prompt}"
             }
         ]
     )
